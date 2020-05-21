@@ -4,9 +4,9 @@
 # @Author : Yuye
 # @File   : pages
 
-from page import tools
+from Page import Tools
 
-pages = tools.parse()
+pages = Tools.parse()
 
 
 def get_locater(clazz_name, method_name):

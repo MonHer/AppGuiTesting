@@ -5,7 +5,7 @@
 # @File   : Environment.py
 
 from Utils.Config import Config
-from Utils import Log
+from Utils import L
 from Utils.Tools import Device
 from Utils.Shell import Shell
 from Utils.Shell import ADB
@@ -58,19 +58,19 @@ class Environment:
         self.save_environment()
 
     def check_environment(self):
-        Log.i('检查环境...')
+        L.i('检查环境...')
         # 检查appium版本
         if '1.17.1' not in self.appium_v:
-            Log.e('appium 版本有问题')
+            L.e('appium 版本有问题')
             exit()
         else:
-            Log.i('appium version {}'.format(self.appium_v))
+            L.i('appium version {}'.format(self.appium_v))
         # 检查设备
         if not self.devices:
-            Log.e('没有设备连接')
+            L.e('没有设备连接')
             exit()
         else:
-            Log.i('已连接设备:', self.devices)
+            L.i('已连接设备:', self.devices)
 
     def save_environment(self):
         infos = []
@@ -88,7 +88,7 @@ class Environment:
                                    app_activity, app_package)
         with open(env_path, 'w') as f:
             yaml.dump(env_info, f, default_flow_style=False)
-        Log.i('保存环境配置 Path:' + env_path)
+        L.i('保存环境配置 Path:' + env_path)
 
     def get_environment_info(self) -> EnvironmentInfo:
         env_path = self.config.env_yaml_path

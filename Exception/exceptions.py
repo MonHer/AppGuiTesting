@@ -4,9 +4,9 @@
 # @Author : Yuye
 # @File   : exceptions.py
 
-class NotFoundElementError (Exception):
+class NotFoundElementError(Exception):
     pass
 
 
-class NotFoundTextError (Exception):
+class NotFoundTextError(Exception):
     pass

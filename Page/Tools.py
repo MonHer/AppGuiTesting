@@ -4,19 +4,18 @@
 # @Author : Yuye
 # @File   : Tools.py
 
-from Utils import Log
 import yaml
 import jinja2
 from Utils.Environment import Environment
 import os
 import os.path
 from Utils.Config import Config
-
+from Utils import L
 pages_path = Environment().get_environment_info().pages_yaml
 
 
 def parse():
-    Log.i('解析yaml, Path:' + pages_path)
+    L.i('解析yaml, Path:' + pages_path)
     pages = {}
     for root, dirs, files in os.walk(pages_path):
         for name in files:
@@ -50,15 +49,15 @@ class GenPages:
         利用jinja2生成pages.py文件
         """
         base_dir = Config.BASE_PATH_DIR
-        template_loader = jinja2.FileSystemLoader(searchpath=base_dir + "/page/template")
+        template_loader = jinja2.FileSystemLoader(searchpath=base_dir + "/Page/template")
         template_env = jinja2.Environment(loader=template_loader)
         page_list = GenPages.gen_page_list()
         print(page_list)
         _templateVars = {
             'page_list': page_list
         }
-        template = template_env.get_template("pages")
-        with open(base_dir + '/page/pages.py', 'w', encoding='utf-8') as f:
+        template = template_env.get_template("Pages")
+        with open(base_dir + '/Page/Pages.py', 'w', encoding='utf-8') as f:
             f.write(template.render(_templateVars))
 
 

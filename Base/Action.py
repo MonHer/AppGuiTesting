@@ -7,11 +7,10 @@
 import time
 from appium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
-from Exception.exceptions import NotFoundElementError, NotFoundTextError
-from Utils import Log
+from Utils import L
+from Exception.exceptions import *
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.common.exceptions import TimeoutException
-
 
 def singleton(class_):
     instances = {}
@@ -172,7 +171,7 @@ class ElementActions:
             el = self._find_element(locator, is_need_displayed=False)
             return el is not None
         except NotFoundElementError:
-            Log.w("[Toast] 页面中未能找到 %s toast" % locator)
+            L.w("[Toast] 页面中未能找到 %s toast" % locator)
             return False
 
     def is_text_displayed(self, text, is_retry=True, retry_time=5, is_raise=False):
@@ -199,7 +198,7 @@ class ElementActions:
             else:
                 return self._find_text_in_page(text)
         except TimeoutException:
-            Log.w("[Text]页面中未找到 %s 文本" % text)
+            L.w("[Text]页面中未找到 %s 文本" % text)
             if is_raise:
                 raise NotFoundTextError
             else:
@@ -234,7 +233,7 @@ class ElementActions:
             True : 存在
 
         """
-        Log.i("[查找] 文本 %s " % text)
+        L.i("[查找] 文本 %s " % text)
         return text in self.driver.page_source
 
     def _find_element(self, locator, is_need_displayed=True):
@@ -264,7 +263,7 @@ class ElementActions:
                     lambda driver: self._get_element_by_type(driver, locator) is not None)
             return self._get_element_by_type(self.driver, locator)
         except Exception as e:
-            Log.e("[element] 页面中未能找到 %s 元素" % locator)
+            L.e("[element] 页面中未能找到 %s 元素" % locator)
             raise NotFoundElementError
 
     def _find_elements(self, locator):
@@ -286,7 +285,7 @@ class ElementActions:
                 lambda driver: self._get_element_by_type(driver, locator, False).__len__() > 0)
             return self._get_element_by_type(self.driver, locator, False)
         except:
-            Log.w("[elements] 页面中未能找到 %s 元素" % locator)
+            L.w("[elements] 页面中未能找到 %s 元素" % locator)
             return []
 
     @staticmethod
@@ -305,7 +304,7 @@ class ElementActions:
         """
         value = locator['value']
         ltype = locator['type']
-        Log.i("[查找]元素 %s " % locator)
+        L.i("[查找]元素 %s " % locator)
         if ltype == 'name':
             ui_value = 'new UiSelector().textContains' + '(\"' + value + '\")'
             return driver.find_element_by_android_uiautomator(

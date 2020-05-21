@@ -3,6 +3,6 @@ HomePage:
   dec: 主界面
   locators:
     -
-      name: 登录入口
-      type: id
-      value: com.up360.teacher.android.activity.ui.IndexActivity
+      name: 发布练习
+      type: xpath
+      value: //*[@text='发布练习']

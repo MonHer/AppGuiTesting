@@ -9,6 +9,9 @@ python:
   - 3.6
   - 3.7
   - 3.8
+rvm:
+ - 2.2
+ - jruby
 matrix:
   include: # Required for Python 3.6+
     - python: 3.6
@@ -21,7 +24,9 @@ install:
   - pip install poetry
   - poetry install -vvv
 script:
-  - poetry run coverage run --source=Test -m pytest -v
+  - poetry run coverage run run.py
   - poetry run coverage report -m
 after_success:
   - poetry run coveralls
+
+

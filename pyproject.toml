@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "appguitesting"
+version = "0.1.0"
+description = "AppGuiTesting"
+authors = ["CWF <1234>"]
+license = "apache-2.0"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pytest = "^5.4.2"
+Appium-Python-Client = "^1.0.1"
+watchdog = "^0.10.2"
+termcolor = "^1.1.0"
+PyYAML = "^5.3.1"
+jinja2 = "^2.11.2"
+exception = "^0.1.0"
+
+[tool.poetry.dev-dependencies]
+coveralls = "^2.0.0"
+coverage = "^5.1"
+pytest = "^5.4.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

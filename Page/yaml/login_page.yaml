@@ -1,0 +1,16 @@
+---
+LoginPage:
+  dec: 登录页面
+  locators:
+    -
+      name: 账号
+      type: id
+      value: com.up360.teacher.android.activity:id/username
+    -
+      name: 密码
+      type: id
+      value: com.up360.teacher.android.activity:id/pwd
+    -
+      name: 登录
+      type: id
+      value: com.up360.teacher.android.activity:id/login

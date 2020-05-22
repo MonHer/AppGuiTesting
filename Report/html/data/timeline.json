@@ -1,0 +1,26 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-40OVS5V",
+    "children" : [ {
+      "name" : "6648-MainThread",
+      "children" : [ {
+        "name" : "test_login",
+        "uid" : "c0e81f3eabf8cd7a",
+        "parentUid" : "31d85c2b2d41d6eb1a1f9da6b87e12eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1590116350540,
+          "stop" : 1590116363532,
+          "duration" : 12992
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "31d85c2b2d41d6eb1a1f9da6b87e12eb"
+    } ],
+    "uid" : "e1df16a0f2986e6a500a7218dda9cae8"
+  } ]
+}

@@ -21,7 +21,7 @@ def singleton(class_):
 
 
 class Config:
-    DEFAULT_CONFIG_DIR = str(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "data/config.ini")))
+    DEFAULT_CONFIG_DIR = str(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "Data/config.ini")))
     BASE_PATH_DIR = str(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)))
 
     # titles:
@@ -42,11 +42,11 @@ class Config:
         self.cp.read(self.path)
         L.i('初始化config...config path: ' + self.path)
         apk_name = self.get_config(Config.TITLE_NAME, Config.VALUE_APP)
-        self.apk_path = Config.BASE_PATH_DIR + '/apk/' + apk_name
-        self.xml_report_path = Config.BASE_PATH_DIR + '/report/xml'
-        self.html_report_path = Config.BASE_PATH_DIR + '/report/html'
-        self.pages_yaml_path = Config.BASE_PATH_DIR + '/page/yaml'
-        self.env_yaml_path = Config.BASE_PATH_DIR + '/data/environment_info.yaml'
+        self.apk_path = Config.BASE_PATH_DIR + '/Apk/' + apk_name
+        self.xml_report_path = Config.BASE_PATH_DIR + '/Report/xml'
+        self.html_report_path = Config.BASE_PATH_DIR + '/Report/html'
+        self.pages_yaml_path = Config.BASE_PATH_DIR + '/Page/yaml'
+        self.env_yaml_path = Config.BASE_PATH_DIR + '/Data/environment_info.yaml'
         self.app_activity = self.get_config(Config.TITLE_NAME, Config.VALUE_APP_ACTIVITY)
         self.app_package = self.get_config(Config.TITLE_NAME, Config.VALUE_APP_PACKAGE)
         self.account_success = self.get_config(Config.TITLE_ACCOUNT, Config.VALUE_ACCOUNT_SUCCESS)

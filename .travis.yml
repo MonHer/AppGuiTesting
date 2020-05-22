@@ -24,7 +24,6 @@ install:
   - pip install poetry
   - poetry install -vvv
 script:
-  - cd E:\GHost\AppGuiTesting
   - poetry run coverage run run.py
   - poetry run coverage report -m
 after_success:

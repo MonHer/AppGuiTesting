@@ -24,5 +24,3 @@ class LoginPage:
     账号 = get_locater('LoginPage', '账号')
     密码 = get_locater('LoginPage', '密码')
     登录 = get_locater('LoginPage', '登录')
-
-    

@@ -1,5 +1,5 @@
 !EnvironmentInfo
-apk: E:\GHost\AppGuiTesting/apk/com.up360.teacher.android.activity.apk
+apk: D:\GHost\AppGuiTesting/Apk/com.up360.teacher.android.activity.apk
 app_activity: .ui.IndexActivity
 app_package: com.up360.teacher.android.activity
 appium: 1.17.1
@@ -8,6 +8,6 @@ devices:
   device_name: 127.0.0.1:21503
   platform_name: Android
   platform_version: ''
-html_report: E:\GHost\AppGuiTesting/report/html
-pages_yaml: E:\GHost\AppGuiTesting/page/yaml
-xml_report: E:\GHost\AppGuiTesting/report/xml
+html_report: D:\GHost\AppGuiTesting/Report/html
+pages_yaml: D:\GHost\AppGuiTesting/Page/yaml
+xml_report: D:\GHost\AppGuiTesting/Report/xml
